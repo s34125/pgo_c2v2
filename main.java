@@ -18,5 +18,21 @@ public class main { new*
 
             return result;
         }
+
+        public static int findDominant(int[] array) {
+            int n = array.length;
+            for (int i = 0; i < n; i++) {
+                int count = 0;
+                for (int j = 0; j < n; j++) {
+                    if (array[j] == array[i]) {
+                        count++;
+                    }
+                }
+                if (count > n / 2) {
+                    return array[i];
+                }
+            }
+            return -1;
+        }
     }
 }
