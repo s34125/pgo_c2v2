@@ -34,5 +34,17 @@ public class main { new*
             }
             return -1;
         }
+
+        public static int[] rotateArray(int[] array, int positions) {
+            int n = array.length;
+            positions = positions % n; // Normalizacja pozycji, aby uniknąć pełnych rotacji
+            int[] result = new int[n];
+
+            for (int i = 0; i < n; i++) {
+                result[(i + positions) % n] = array[i];
+            }
+
+            return result;
+        }
     }
 }
